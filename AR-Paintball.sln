@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR-Paintball", "Assembly-CSharp.csproj", "{7B691F2A-BA9F-AC54-62A4-761A0FFF5011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR-Paintball", "Assembly-CSharp-firstpass.csproj", "{0F039C0D-C3B9-003D-4E1E-CC7C68D07A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR-Paintball", "Assembly-CSharp-Editor.csproj", "{691B99FA-BA35-7737-11CA-2C5A49293E00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B691F2A-BA9F-AC54-62A4-761A0FFF5011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B691F2A-BA9F-AC54-62A4-761A0FFF5011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B691F2A-BA9F-AC54-62A4-761A0FFF5011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B691F2A-BA9F-AC54-62A4-761A0FFF5011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F039C0D-C3B9-003D-4E1E-CC7C68D07A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F039C0D-C3B9-003D-4E1E-CC7C68D07A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F039C0D-C3B9-003D-4E1E-CC7C68D07A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F039C0D-C3B9-003D-4E1E-CC7C68D07A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691B99FA-BA35-7737-11CA-2C5A49293E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691B99FA-BA35-7737-11CA-2C5A49293E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691B99FA-BA35-7737-11CA-2C5A49293E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691B99FA-BA35-7737-11CA-2C5A49293E00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
