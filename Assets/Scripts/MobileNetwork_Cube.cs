@@ -8,17 +8,31 @@ public class MobileNetwork_Cube : Photon.PunBehaviour
     //   the room name in case there are more people playing
     //   your game - though it is not required for the assignment.
 
+	void Start()
+	{
+		PhotonNetwork.ConnectUsingSettings("0.1");
+	}
+
     void OnGUI()
     {
         GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
     }
 
-    //public override void OnJoinedRoom()
-    //{
-    //    //TODO-1.c: use PhotonNetwork.Instantiate to create a "PhoneCube" across the network
-    //    var cube =
-    //    GetComponent<GyroController>().ControlledObject = cube;
-    //}
-
-
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("JOINED ROOM");
+	    
+        //TODO-1.c: use PhotonNetwork.Instantiate to create a "PhoneCube" across the network
+		var cube = PhotonNetwork.Instantiate("PhoneCube", new Vector3(0,0,0), new Quaternion(), 0);
+        GetComponent<GyroController>().ControlledObject = cube;
+    }
+	
+	public override void OnJoinedLobby()
+	{
+		//PhotonNetwork.CreateRoom(null);
+		if (PhotonNetwork.JoinRandomRoom())
+			Debug.Log("Join room succeeded");
+		else
+			Debug.Log("Join room fails");
+	}
 }

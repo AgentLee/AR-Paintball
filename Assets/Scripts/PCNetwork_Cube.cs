@@ -14,7 +14,7 @@ public class PCNetwork_Cube : Photon.PunBehaviour
         //   so the application will automatically connect to Lobby
         //   and call OnJoinedLobby()
         PhotonNetwork.ConnectUsingSettings("0.1");
-        roomName = GenerateRoomName();
+        roomName = "ayo";
     }
 
     static string GenerateRoomName()

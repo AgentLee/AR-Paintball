@@ -20,6 +20,8 @@ public class MobileShooter : MonoBehaviour {
     bool bMouseDown = false;
     float ballSpeedFixed = 25f;
 
+    float ballSpeedVariable;
+
     // Use this for initialization
     void Start()
     {
@@ -63,6 +65,23 @@ public class MobileShooter : MonoBehaviour {
 
             if (swipe_vel.y > swipespeed_min)
             {
+                ballSpeedVariable = swipe_vel.y * ballSpeedFixed;
+                ShootBallUp();
+            }
+
+            if (swipe_vel.x > swipespeed_min)
+            {
+                ballSpeedVariable = swipe_vel.x * ballSpeedFixed;
+
+                ShootBallRight();
+                ShootBallUp();
+            }
+
+            if (-swipe_vel.x > swipespeed_min)
+            {
+                ballSpeedVariable = -swipe_vel.x * ballSpeedFixed;
+
+                ShootBallLeft();
                 ShootBallUp();
             }
 
@@ -74,7 +93,6 @@ public class MobileShooter : MonoBehaviour {
 
     public void ShootBall(Vector3 velocity)
     {
-
         GetComponent<AudioSource>().Play();
 
         // You may want to use a random nice color so there is one!
@@ -87,9 +105,13 @@ public class MobileShooter : MonoBehaviour {
         //   of the ball across all clients (PhotonTargets.All) and transfer 
         //   the ownership of the ball to PC so the ball is correctly destroyed
         //   upon hitting a wall.
+
+        GameObject ball = PhotonNetwork.Instantiate("ball", ARCamera.transform.position, Quaternion.identity, 0);
+
+//        PhotonView photonView = new PhotonView();
+        PhotonView photonView = ball.GetComponent<PhotonView>();
+        photonView.RPC("RPCInitialize", PhotonTargets.All, velocity, color_v);
     }
-
-
 
     public void ShootBallFront()
     {
@@ -98,6 +120,16 @@ public class MobileShooter : MonoBehaviour {
 
     public void ShootBallUp()
     {
-        ShootBall(ballSpeedFixed * ARCamera.transform.up);
+        ShootBall(ballSpeedVariable * ARCamera.transform.up);
+    }
+
+    public void ShootBallRight()
+    {
+        ShootBall(ballSpeedVariable * ARCamera.transform.right);
+    }
+    
+    public void ShootBallLeft()
+    {
+        ShootBall(ballSpeedVariable * -ARCamera.transform.right);
     }
 }

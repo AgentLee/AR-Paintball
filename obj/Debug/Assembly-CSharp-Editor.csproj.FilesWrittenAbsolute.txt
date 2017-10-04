@@ -40,3 +40,5 @@
 /Users/jonlee/Documents/Penn/F17/CIS568/AR-Paintball/Temp/bin/Debug/Mono.Cecil.Mdb.dll
 /Users/jonlee/Documents/Penn/F17/CIS568/AR-Paintball/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/jonlee/Documents/Penn/F17/CIS568/AR-Paintball/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.xml
+/Users/jonlee/Documents/Penn/F17/CIS568/AR-Paintball/Temp/bin/Debug/UnityEditor.iOS.Extensions.dll
+/Users/jonlee/Documents/Penn/F17/CIS568/AR-Paintball/Temp/bin/Debug/UnityEditor.iOS.Extensions.Common.dll

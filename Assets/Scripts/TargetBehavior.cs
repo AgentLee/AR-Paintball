@@ -45,16 +45,20 @@ public class TargetBehavior : MonoBehaviour, ITrackableEventHandler
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
         switch (newStatus)
-        {
-            case TrackableBehaviour.Status.TRACKED:
-                // Target in camera
-                // TODO-2.b 
-                // Recalibrate reference quaternions at GyroController
-                //   and switch the Control of the camera between Vuforia and GyroController.
-                // You may want to toggle GyroController.Paused .
-                tracked = true;
+	    {
+			case TrackableBehaviour.Status.TRACKED:
+	                // Target in camera
+	                // TODO-2.b 
+	                // Recalibrate reference quaternions at GyroController
+	                //   and switch the Control of the camera between Vuforia and GyroController.
+	                // You may want to toggle GyroController.Paused .
+				tracked = true;
 
-
+			    Debug.Log("FOUND TARGET");
+			    
+			    // Found position of target
+			    CameraGyro.Paused = true;
+			    
                 TrackButton.image.color = new Color(0.4f, 1, 0.1f, 0.5f);
                 break;
             case TrackableBehaviour.Status.EXTENDED_TRACKED:
@@ -63,15 +67,24 @@ public class TargetBehavior : MonoBehaviour, ITrackableEventHandler
                 // TODO-2.b
                 tracked = false;
 
+                Debug.Log("(kinda) FOUND TARGET");
+                
+                // Found relative position of target 
+                CameraGyro.Paused = true;
+                
                 TrackButton.image.color = new Color(0.7f, 0.5f, 0.1f, 0.5f);
                 break;
             default:
                 tracked = false;
                 // TODO-2.b
 
+                Debug.Log("KEEP LOOKING");
+                
+                // Want to move to get position
+                CameraGyro.Paused = false;
+                
                 TrackButton.image.color = new Color(1, 0.1f, 0.1f, 0.5f);
                 break;
-        }
-        
+        }   
     }
 }

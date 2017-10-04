@@ -63,7 +63,7 @@ public class GyroController : MonoBehaviour
             // TODO-1.d & TODO-2.a:
             //   rotate the camera or cube based on qRefObject, qRefGyro and current 
             //   data from gyroscope
-            //controlledObject.transform.rotation = 
+            controlledObject.transform.rotation = ConvertRotation(gyro.attitude);
         }
     }
 
@@ -77,13 +77,13 @@ public class GyroController : MonoBehaviour
         qRefGyro = ConvertRotation(Input.gyro.attitude);
     }
 
-    //// Possible helper function to smooth between gyro and Vuforia
-    //public void UpdateOrientation(float deltatime)
-    //{
-    //        float smooth = 1f;
-    //        qRefCam = Quaternion.Slerp(qRefCam, transform.rotation, smooth * deltatime);
-    //        qRefGyro = Quaternion.Slerp(qRefGyro, ConvertRotation(gyro.attitude), smooth * deltatime);
-    //    }
-    //}
+    // Possible helper function to smooth between gyro and Vuforia
+//    public void UpdateOrientation(float deltatime)
+//    {
+//            float smooth = 1f;
+//            qRefCam = Quaternion.Slerp(qRefCam, transform.rotation, smooth * deltatime);
+//            qRefGyro = Quaternion.Slerp(qRefGyro, ConvertRotation(gyro.attitude), smooth * deltatime);
+//        }
+//    }
 
 }

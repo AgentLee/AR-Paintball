@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cube_PC.unity
+- path: Assets/PaintBall_PC.unity
   isLoaded: 1
   isActive: 1

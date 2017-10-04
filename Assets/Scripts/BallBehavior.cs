@@ -36,6 +36,4 @@ public class BallBehavior : Photon.MonoBehaviour
             GetComponent<PhotonView>().RequestOwnership();
         }
     }
-    
-
 }
