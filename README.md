@@ -1,14 +1,13 @@
 # Augmented Reality Paintball 
-CIS568  
 
 # Overview
 
-In this project, I was able to develop an augmented reality application in Unity using Photon and Vuforia. 
+In this project, I was able to develop a simple augmented reality application in Unity using Photon and Vuforia. 
 
 The goal is to use your phone to shoot paintballs at your computer. The paintball's speed and direction are dictated by how fast the user swipes and where the user swipes. 
 
 # Demo
-![https://vimeo.com/236774414](demo/demo_screenshot.png)
+ [![Demo](demo/demo_screenshot.png)](https://vimeo.com/236774414)
 
 # How to Run on iOS
 - Build mobile scene for iOS in Unity.
